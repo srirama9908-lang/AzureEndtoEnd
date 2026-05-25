@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "Azuresqltodatalake",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Azuresqltodl",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
