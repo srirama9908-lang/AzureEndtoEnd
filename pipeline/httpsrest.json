@@ -1,9 +1,9 @@
 {
-	"name": "Azuresqltodatalake",
+	"name": "httpsrest",
 	"properties": {
 		"activities": [
 			{
-				"name": "Azuresqltodl",
+				"name": "httpsrest",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
