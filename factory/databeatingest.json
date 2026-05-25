@@ -1,0 +1,15 @@
+{
+	"name": "databeatingest",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "dec9b380-ed9c-41c8-97cc-357228ffc9e4",
+		"tenantId": "61df58fe-d469-43ce-8e1f-a9d0ca00f2ab"
+	}
+}
