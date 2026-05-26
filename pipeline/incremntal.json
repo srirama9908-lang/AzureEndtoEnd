@@ -5,6 +5,8 @@
 			{
 				"name": "azuresqltolake",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -58,7 +60,12 @@
 					},
 					"dataset": {
 						"referenceName": "Jsondynamic2",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "bronze",
+							"folder": "cdc",
+							"filename": "cdc.json"
+						}
 					},
 					"firstRowOnly": false
 				}
