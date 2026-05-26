@@ -20,7 +20,7 @@
 		"Sourcegithub_properties_typeProperties_url": {
 			"value": "https://raw.githubusercontent.com/"
 		},
-		"storageevents_properties_typeProperties_scope": {
+		"storageevent_properties_typeProperties_scope": {
 			"value": "/subscriptions/4a76603d-82ce-437c-bb45-48013614873a/resourceGroups/databeattimesense/providers/Microsoft.Storage/storageAccounts/databeatstorage"
 		}
 	}
