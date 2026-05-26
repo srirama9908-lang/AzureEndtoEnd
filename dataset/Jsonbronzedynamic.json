@@ -1,0 +1,28 @@
+{
+	"name": "Jsonbronzedynamic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "NewLinkGen2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cotainer": {
+				"type": "string"
+			},
+			"directory": {
+				"type": "string"
+			},
+			"file": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			}
+		},
+		"schema": {}
+	}
+}
