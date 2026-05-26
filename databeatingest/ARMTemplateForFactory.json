@@ -27,7 +27,7 @@
 			"type": "string",
 			"defaultValue": "https://raw.githubusercontent.com/"
 		},
-		"storageevent_properties_typeProperties_scope": {
+		"trigger2_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/4a76603d-82ce-437c-bb45-48013614873a/resourceGroups/databeattimesense/providers/Microsoft.Storage/storageAccounts/databeatstorage"
 		}
@@ -793,12 +793,12 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/storageevent')]",
+			"name": "[concat(parameters('factoryName'), '/trigger2')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipelines": [
 					{
 						"pipelineReference": {
@@ -812,10 +812,10 @@
 				"typeProperties": {
 					"blobPathBeginsWith": "/bronze/blobs/",
 					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('storageevent_properties_typeProperties_scope')]",
+					"scope": "[parameters('trigger2_properties_typeProperties_scope')]",
 					"events": [
-						"Microsoft.Storage.BlobCreated",
-						"Microsoft.Storage.BlobDeleted"
+						"Microsoft.Storage.BlobDeleted",
+						"Microsoft.Storage.BlobCreated"
 					]
 				}
 			},
