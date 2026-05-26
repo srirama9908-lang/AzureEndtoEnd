@@ -26,6 +26,10 @@
 		"Sourcegithub_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://raw.githubusercontent.com/"
+		},
+		"storageevents_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/4a76603d-82ce-437c-bb45-48013614873a/resourceGroups/databeattimesense/providers/Microsoft.Storage/storageAccounts/databeatstorage"
 		}
 	},
 	"variables": {
@@ -787,6 +791,36 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/storageevents')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pipeline1",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/bronze/blobs/Raw/",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('storageevents_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pipeline1')]"
+			]
 		}
 	]
 }
