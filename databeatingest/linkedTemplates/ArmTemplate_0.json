@@ -48,7 +48,7 @@
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": 15
+							"waitTimeInSeconds": 10
 						}
 					}
 				],
@@ -505,7 +505,7 @@
 				],
 				"type": "BlobEventsTrigger",
 				"typeProperties": {
-					"blobPathBeginsWith": "/bronze/blobs/Raw/",
+					"blobPathBeginsWith": "/bronze/blobs/",
 					"ignoreEmptyBlobs": true,
 					"scope": "[parameters('storageevents_properties_typeProperties_scope')]",
 					"events": [
