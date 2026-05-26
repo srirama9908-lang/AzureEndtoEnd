@@ -59,12 +59,12 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "Jsondynamic2",
+						"referenceName": "Jsonlastcdc",
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "bronze",
-							"folder": "cdc",
-							"filename": "cdc.json"
+							"directory": "cdc",
+							"file": "cdc.json"
 						}
 					},
 					"firstRowOnly": false
