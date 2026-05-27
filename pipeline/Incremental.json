@@ -106,7 +106,10 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"cotainer": "bronze",
-							"directory": "cdc",
+							"directory": {
+								"value": "@{pipeline().parameters.table}_cdc",
+								"type": "Expression"
+							},
 							"file": "cdc.json"
 						}
 					},
@@ -144,7 +147,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greater(activity('Azuresqltolake').output.Readcount,0)",
+						"value": "@greater(activity('Azuresqltolake').output.rowsRead,0)",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
@@ -176,7 +179,7 @@
 										}
 									}
 								},
-								"enableLogging": true,
+								"enableLogging": false,
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
 									"recursive": true,
@@ -241,7 +244,7 @@
 										{
 											"name": "cdc",
 											"value": {
-												"value": "@activity('Lookup1').output.value[0].cdc",
+												"value": "@activity('Lookup1_copy1').output.value[0].cdc",
 												"type": "Expression"
 											}
 										}
