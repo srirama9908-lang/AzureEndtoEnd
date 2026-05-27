@@ -152,10 +152,12 @@
 				"typeProperties": {
 					"source": {
 						"type": "JsonSource",
-						"additionalColumns": {
-							"type": "Expression",
-							"value": "@activity('Azuresqltolake').output.resultSets[0].rows[0].cdc"
-						},
+						"additionalColumns": [
+							{
+								"name": "cdc",
+								"value": "@activity('Lookup1').output.value[0].cdc"
+							}
+						],
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
@@ -166,12 +168,12 @@
 						}
 					},
 					"sink": {
-						"type": "ParquetSink",
+						"type": "JsonSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "ParquetWriteSettings"
+							"type": "JsonWriteSettings"
 						}
 					},
 					"enableStaging": false
@@ -189,11 +191,11 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "parquetdynamic",
+						"referenceName": "Jsonbronzedynamic",
 						"type": "DatasetReference",
 						"parameters": {
-							"container": "bronze",
-							"folder": "cdc",
+							"cotainer": "bronze",
+							"directory": "cdc",
 							"file": "cdc.json"
 						}
 					}
