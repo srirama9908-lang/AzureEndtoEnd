@@ -1,0 +1,10 @@
+{
+	"name": "AzureDataLakeStoragejsonpract",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://databeatstorage.dfs.core.windows.net/"
+		}
+	}
+}
